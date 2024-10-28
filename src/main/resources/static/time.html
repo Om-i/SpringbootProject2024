@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days until next year</title>
+    <script>
+        async function fetchDaysUntilNextYear() {
+            const response = await fetch('/api/daysUntilNextYear');
+            const rText = await response.text();
+            document.getElementById('daysDiv').textContent =
+                `There are ${rText} days remaining until next year`;
+        }
+
+        onload = fetchDaysUntilNextYear;
+    </script>
+</head>
+<body>
+<h1>Countdown to next Year</h1>
+<div id="daysDiv">Loading...</div>
+<a href="/">Back to Home</a>
+</body>
+</html>
